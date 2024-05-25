@@ -1,0 +1,271 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap');
+/* BASIC STYLE FOR NAVBAR STARTS HERE */
+:root{
+    --orange:#368820;
+    --black:#130f40;
+    --light-color:rgb(20, 20, 20);
+    --box-shadow:0 1rem 1.5rem rgba(0,0,0,.1);
+    --border:.0rem solid rgba(0,0,0,.1);
+    --outline:0rem solid rgba(0,0,0,.1);
+    --outline-hover:.2rem solid var(--black);
+}
+
+*{
+    font-family: 'Poppins', sans-serif;
+    margin:0; padding:0;
+    box-sizing: border-box;
+    outline: none; border:none;
+    text-decoration: none;
+    text-transform: capitalize;
+    transition: all .2s linear;
+}
+.sub-heading{
+    text-align: center;
+    color:var(--black);
+    font-size: 2rem;
+    padding-top: 0rem;
+}
+
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+    scroll-behavior: smooth;
+    scroll-padding-top: 3rem;
+}
+
+body{
+    min-height: 100vh;
+    width: 100%;
+    background:#555555;
+    align-items: center;
+    justify-content:center;
+}
+
+section{
+  padding:2rem 9%;
+}
+
+.btn{
+    margin-top: 1rem;
+    display: inline-block;
+    padding:.10rem 3rem;
+    font-size: 1.3rem;
+    border-radius: .5rem;
+    border:.5rem solid var(--black);
+    color:var(--black);
+    cursor: pointer;
+    background: none;
+}
+
+.btn:hover{
+    background: var(--orange);
+    color:rgb(68, 65, 65);
+}
+
+.header{
+    position: fixed;
+    top:0; left:0; right: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding:2rem 9%;
+    background:rgb(221, 223, 222);
+    box-shadow: var(--box-shadow);
+}
+
+.header .logo{
+    font-size: 2.5rem;
+    font-weight: bolder;
+    color:var(--black);
+    width: 100px;
+	cursor: pointer;
+	margin-left: -60px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+  }
+.navbar ul li {
+    width: 130px;
+    padding: -8px -0px;
+    text-align: center;
+    position: relative;
+
+  }
+.navbar ul li a {
+    font-size: 15px;
+    color: var(--color-green);
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+.navbar ul li a:hover {
+    color: var(--color-gray);
+  }
+.navbar ul li a
+  {
+      color: #3A4034;
+      text-decoration: none;
+      position: relative;
+  }
+.navbar ul li a::after
+  {
+      content: '';
+      width: 0%;
+      height: 3px;
+      position: absolute;
+      bottom: -5px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgb(8, 8, 8);
+      transition: width 0.3s;
+  }
+.header .navbar a.active,
+.header .navbar a:hover{
+    color:rgb(179, 63, 45); /*HOVER COLOR*/
+    background: var(--border);
+}
+
+.sub-menu1, .sub-menu2{
+    display: none;
+  }
+  .navbar ul li:hover .sub-menu1, .navbar  ul li:hover .sub-menu2{
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 40%;
+    background-color: rgb(221, 223, 222);
+  }
+  .navbar  ul li:hover .sub-menu1 ul, .navbar  ul li:hover .sub-menu2 ul{
+    display: block;
+    margin: 5px;
+  }
+  .navbar ul li:hover .sub-menu1 ul li, .navbar  ul li:hover .sub-menu2 ul li{
+    width: 100px;
+    padding: 5px;
+  }
+  /* Line under 'Year Level'(Drop Down Menu) */
+  .navbar  ul li:hover .sub-menu1 ul li:nth-child(1), .navbar  ul li:hover .sub-menu2 ul li:nth-child(1){
+    font-size: 12px;
+    border-bottom:1px groove #3A4034;
+    color:rgb(179, 63, 45);
+  }
+/* BASIC STYLE FOR NAVBAR ENDS HERE */
+
+/* SIDEBAR STYLE STARTS HERE */
+.sidebar{
+  height: 100%;
+  width: 248px;
+  position: fixed;
+  z-index: 1;
+  top: 86px;;
+  left: 0;
+  background-color: rgb(202, 207, 204);
+  overflow-x: hidden;
+  padding-top: 0px;
+}
+
+.sidebar ul{
+  list-style: none;
+}
+
+/* Grade 7 - 10 */
+.mainMenu{
+  cursor: pointer;
+    display: block;
+    padding: 15px 15px 15px 45px;
+    font-size: 18px;
+    border-bottom: 1px solid #2d2d2d;
+    color: #1c1c1c;
+    position: relative;
+    transition: all 0.4s ease-out;
+}
+
+.mainMenu:hover{
+  /* background: #04dee9; fallback colour */
+	background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#8b8b8b), to(#7c7c7c));
+}
+
+.mainMenu i{
+  right: 12px;
+  left: auto;
+  padding-right: 10px;
+  padding-left: 10px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.subMenu{
+  display: none;
+  background: rgb(202, 207, 204);
+  transition: all 2s ease-in-out;
+}
+
+.menu li.active .subMenu{
+  display: block;
+}
+
+.subMenu a{
+  display: block;
+  color: #1c1c1c;
+  font-weight: 600;
+  padding: 12px 12px 12px 45px;
+  transition: all 0.2s ease-out;
+  text-decoration: none;
+}
+
+.subMenu a:hover{
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#8b8b8b), to(#7c7c7c));;
+    color: rgb(179, 63, 45);
+}
+
+.menu li.active .mainMenu{ /*After click gr 7-10*/
+  color: rgb(179, 63, 45);
+}
+
+.menu li.active .mainMenu i{
+  transform: rotate(-180deg);
+}
+/* SIDEBAR STYLE ENDS HERE */
+
+/* CONTENT STARTS HERE */
+.content{
+  margin-left: 240px;
+  padding: 0 10px ;
+  margin-top: 86px;
+  margin-bottom: 0;
+  background-color: #555555;
+  /* #d6caa6  #d2c7a7*/
+}
+
+.content h1{
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: center;
+  font-size: 30px;
+  color: #fff;
+}
+
+
+.loader-container{
+  position: fixed;
+  top:0; left:0;
+  height:100%; 
+  width:100%;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.loader-container img{
+  width:5rem;
+}
+
+.loader-container.fade-out{
+  top:-150%;
+  opacity:0;
+}
+
+
